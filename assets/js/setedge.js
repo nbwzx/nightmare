@@ -27,6 +27,33 @@ const edgeCodeToCustom = {
     "a68": "N"
 };
 
+const edgeCodeToSpeffz = {
+    "a12": "A",
+    "a14": "D",
+    "a16": "B",
+    "a18": "C",
+    "a22": "U",
+    "a24": "X",
+    "a26": "V",
+    "a28": "W",
+    "a32": "E",
+    "a34": "H",
+    "a36": "F",
+    "a38": "G",
+    "a42": "M",
+    "a44": "P",
+    "a46": "N",
+    "a48": "O",
+    "a52": "I",
+    "a54": "L",
+    "a56": "J",
+    "a58": "K",
+    "a62": "Q",
+    "a64": "T",
+    "a66": "R",
+    "a68": "S"
+};
+
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
     d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
@@ -69,6 +96,20 @@ function byid(id) {
 
 function setAll() {
     for (const i in edgeCodeToCustom) {
+        setCookie(i, byid(i).value, 30);
+    }
+}
+
+function setChichu() {
+    for (const i in edgeCodeToCustom) {
+        byid(i).value = edgeCodeToCustom[i];
+        setCookie(i, byid(i).value, 30);
+    }
+}
+
+function setSpeffz() {
+    for (const i in edgeCodeToSpeffz) {
+        byid(i).value = edgeCodeToSpeffz[i];
         setCookie(i, byid(i).value, 30);
     }
 }

@@ -27,6 +27,33 @@ const cornerCodeToCustom = {
     "a69": "P"
 };
 
+const cornerCodeToSpeffz = {
+    "a11": "A",
+    "a13": "B",
+    "a17": "D",
+    "a19": "C",
+    "a21": "U",
+    "a23": "V",
+    "a27": "X",
+    "a29": "W",
+    "a31": "E",
+    "a33": "F",
+    "a37": "H",
+    "a39": "G",
+    "a41": "M",
+    "a43": "N",
+    "a47": "P",
+    "a49": "O",
+    "a51": "I",
+    "a53": "J",
+    "a57": "L",
+    "a59": "K",
+    "a61": "Q",
+    "a63": "R",
+    "a67": "T",
+    "a69": "S"
+};
+
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
     d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
@@ -69,6 +96,20 @@ function byid(id) {
 
 function setAll() {
     for (const i in cornerCodeToCustom) {
+        setCookie(i, byid(i).value, 30);
+    }
+}
+
+function setChichu() {
+    for (const i in cornerCodeToCustom) {
+        byid(i).value = cornerCodeToCustom[i];
+        setCookie(i, byid(i).value, 30);
+    }
+}
+
+function setSpeffz() {
+    for (const i in cornerCodeToSpeffz) {
+        byid(i).value = cornerCodeToSpeffz[i];
         setCookie(i, byid(i).value, 30);
     }
 }
