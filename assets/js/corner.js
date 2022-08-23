@@ -10169,7 +10169,7 @@ function getCookie(cname) {
 }
 
 function algSearch() {
-    const idValue = cornerAlgToStandard[`${document.getElementById("cornerinput").value}`];
+    const idValue = cornerAlgToStandard[`${document.getElementById("cornerinput").value.toUpperCase()}`];
     if (cornerAlgToInfo.hasOwnProperty(idValue)) {
         document.getElementById("corneroutput").textContent = cornerAlgToInfo[idValue].algorithm;
     } else {

@@ -12413,7 +12413,7 @@ function getCookie(cname) {
 }
 
 function algSearch() {
-    const idValue = edgeAlgToStandard[`${document.getElementById("edgeinput").value}`];
+    const idValue = edgeAlgToStandard[`${document.getElementById("edgeinput").value.toUpperCase()}`];
     if (edgeAlgToInfo.hasOwnProperty(idValue)) {
         document.getElementById("edgeoutput").textContent = edgeAlgToInfo[idValue].algorithm;
     } else {
